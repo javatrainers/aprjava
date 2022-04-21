@@ -1,0 +1,2 @@
+GIT : central code repository. to share/ merge/ download
+programs between the developers in the team
