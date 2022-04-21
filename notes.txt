@@ -1,2 +1,34 @@
 GIT : central code repository. to share/ merge/ download
 programs between the developers in the team
+
+BRAIN
+	INFO - RED SIGNAL
+	
+	ACTION
+		instruction = slow down and stop the car
+
+COMPUTER = cell/tablet/laptop/desktop
+	INFORMATION (MEMORY)
+	
+	ACTION / PROCESS INSTRUCTIONS (CPU)
+
+PROGRAM - BANKACCOUNT
+	BALANCE/MONEY=1000 (INFORMATION STORAGE)
+	
+	ACTION
+		WITHDRAW=200 (ACTIONS)
+			instructions= deduct withdraw amount from BALANCE (INSTRUCTION algorithm to complete the task)
+			BALANCE=800
+		
+		DEPOSIT=100
+			instructions= add deposit amount to the balance
+			balance=900
+			
+NATIVE APPLICATION :
+	sticky / heavy weight software
+	downloaded/installed consume
+				
+WEB APPLICATION
+	light weight software : can be used with web browser software
+	
+	
