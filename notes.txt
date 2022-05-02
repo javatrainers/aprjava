@@ -32,3 +32,71 @@ WEB APPLICATION
 	light weight software : can be used with web browser software
 	
 	
+src - source code = english/french = .java
+bin - binary code = machine language = .class
+
+
+Programming Concept
+	Procedure oriented programming = task oriented (machine programming )
+		FLY ROCKET
+		
+	Object oriented programming = real life approach
+	modular approach = breakdown big problem into small manageable unit
+		ROCKET
+			has
+				cockpit = life support 
+				fuel tank = store the fuel
+				combustion = burn the fuel
+				exhaustion = exhuaust gas,flames downward angel. propels rocket upwards
+			
+			
+			Does
+			
+	Object
+		has = things/attributes that the object is made of
+		does = actions associated with this object
+			
+			
+Bank :
+	money, customer name, account number, withdraw,deposit, transfer, routing number
+	has : money, customername, accountNumber, routing number
+	Does : withdraw, deposit,transfer
+
+Bank has money
+Bank does money
+
+
+Rock
+	has - color, weight, mineral composition
+	does - throw, paperweight
+
+
+
+			
+Bank :
+	money, customer name, account number, withdraw,deposit, transfer, routing number
+	has : money, customername, accountNumber, routing number
+	Does : withdraw, deposit,transfer
+
+
+Bank Program
+	has-a/ information storage***********
+		money=1000
+		name=john
+		acctNumber=123456
+		routing number=000111222
+		
+	does/action ***************
+		withdraw = 100
+			money deducts = 1000 - 100 = 900 LOGIC****************
+		
+		deposit = 200
+			money adds = 1000 + 200 =1200
+		
+		
+		
+POJO = Plain old java object
+
+CLASS program types
+native application = java program designed to run locally on a device
+Servlets = java programs designed for web/internet application
