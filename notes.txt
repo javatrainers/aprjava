@@ -100,3 +100,71 @@ POJO = Plain old java object
 CLASS program types
 native application = java program designed to run locally on a device
 Servlets = java programs designed for web/internet application
+
+
+
+has : store information
+does : change information
+	logic/agorithm // how to change information
+	
+	
+BankProgram
+	has : ssn=1231231 balance=100, address=ny, phone=123 (Store information)
+	does :
+		withdraw (change info)(action)
+			deduct withdraw amount from balance (how to change info)(logic)
+		depsit
+			add deposit amount to the balance
+		updateAddress
+			change address from ny to ca
+			
+			
+Blue print : design on piece of paper (reference)
+Real instance: real materialistic/physical house/car built based upon the blue print design
+
+Class : digital blue print of a software system
+Object : digital data built upon a software blue print
+
+BLUE PRINT of facebook customer
+Facebook customer class
+	status
+	name
+	friends
+	chats
+	picture
+
+
+Iphone = 2006
+	call
+	text
+	browse
+	
+	
+Iphone4 inherit Iphone = 2008
+	call (inherit / reuse)
+	text (inherit / reuse) 
+	browse (inherit / reuse)
+	maps
+	
+	
+	
+capsule = tablet
+	medicine = chemcial/ingrdeients
+	
+encapsulation	
+
+
+
+languages are Sticky ( depended on the device/os it runs on )
+
+
+
+
+
+
+
+
+
+
+
+
