@@ -101,7 +101,14 @@ CLASS program types
 native application = java program designed to run locally on a device
 Servlets = java programs designed for web/internet application
 
-
+Amazon
+	has - products (Variables) vary = changes
+	does - buy, sell (Methods)
+		buy
+			how to buy - (Logic/algorithm = Control flows)
+			charge the customer
+			deduct stock
+		how to sell
 
 has : store information
 does : change information
@@ -158,13 +165,97 @@ encapsulation
 languages are Sticky ( depended on the device/os it runs on )
 
 
+Person
+	has = store information ( VARIABLES )
+		name
+		phone
+		address
+		
+Apple
+	has
+		iphoneStock=1100
+		IphonePrice= 1099
+
+BankAccount
+	has
+		balance=500
+	
+	
 
 
 
 
+Bank Program
+	has-a/ information storage*********** VARIABLES
+		balance/money=1000
+		name=john
+		acctNumber=123456
+		routing number=00.0111222
+		accountActive=false
+		
+	does/action *************** METHODS
+		withdraw = 100
+			money deducts = 1000 - 100 = 900 LOGIC**************** CONTROL FLOWS/OPERATORS
+		
+		deposit = 200
+			money adds = 1000 + 200 =1200
+			
+		
+VARIABLE (HAS-A): STORE INFORMATION
+
+METHODS (DOES-A): CHANGING INFORMATION
+		
+		
+		
+		
+Variables
+	Simple/primitive information = represented with simple/primitive value
+		age=55 ( smallest unit of information)
+		weight=120.6
+	
+	Complex information
+		address= 
+			street, building, city,state,zip,country
 
 
+	simple/primitive data (Primitive data type)
+		numeric = byte, short, int ,  long
+			age, zip, stock, quantity
+		alphabetic = char
+			single character
+		fractional = float, double
+			weight, height			
+		yes/no = boolean (true/false)
+			loggedin status, account status,
+		
+	complex information (Object data type)
+		group of characters = String
+			name, city, state, country, product name
+		Object complex data type
+"NAME" ???
+String name;
+what attribute/variable names are
+what are the data type of each variables
+
+Business requirement discussion	(BRD call)	
+Person
+	has = store information ( VARIABLES )
+		name
+		phone
+		age
+		weight
+
+CamelCase = First letter is capital case, and remaining letter is lower case
+public class Person{ // opening curly bracket
+	
 
 
+}// closing curly bracket
+Data structure
 
-
+HOW TO BEGIN WRITING PROGRAM
+HAS-A (BRD CALLS) INTO PROGRAM
+WHAT ARE THEY TYPE OF DATA
+WHEN TO CHOOSE AMONG DIFFERENT NUMERIC DATA TYPE
+	HOW THEY ARE STORED IN THE MEMORY
+	
