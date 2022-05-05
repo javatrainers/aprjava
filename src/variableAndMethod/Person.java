@@ -15,6 +15,7 @@ public class Person {
 	// *****DATA_TYPE VARIABLE_NAME=VARIABLE_VALUE;*****
 	// RULE : variable value should match data type defined
 	String name="jane"; 
+	int a;
 	long phone=123;
 	short age=12;
 	byte x=125; // -128 to +127

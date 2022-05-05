@@ -259,3 +259,35 @@ WHAT ARE THEY TYPE OF DATA
 WHEN TO CHOOSE AMONG DIFFERENT NUMERIC DATA TYPE
 	HOW THEY ARE STORED IN THE MEMORY
 	
+	
+boolean b;
+String a;	
+int x; // "declaration" line - announce/declare that x is capable of storing
+	// numeric data type
+int age=25; // "initialization" - assigning value for the FIRST time, since
+		// its declaration
+age=26; // 'assignment"/reassignment
+	
+long balance; // declaration
+balance=100;// initialization
+balance=80; // assignment
+balance=150; // reassignment
+
+String name=123;
+// String is data type
+// name is a variable
+// naming convention of variable is camelcase
+// variable name is allowed because it is not a reserved key word
+// 123 is value
+// name is variable declared as data type String
+// this is also a initialization line
+// String is data type that allows to store group of character
+// however value happens to be numeric
+// String is not capable of storing numeric value
+
+
+
+Variable = changes(vary)	
+	values keep changing.
+	
+	
