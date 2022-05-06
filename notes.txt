@@ -291,3 +291,34 @@ Variable = changes(vary)
 	values keep changing.
 	
 	
+	
+	
+RULES on how to use variables
+
+
+= assignment operator
+
+int a=10;
+LHS ( left hand side of equal sign)  int a
+RHS ( right hand side of equal sign) 10
+
+LHS should always be a variable
+RHS can be a value or another matching variable
+
+1) LHS & RHS data type should match
+2) LHS can be variable only
+RHS can be value or a variable
+	if RHS is a variable.. substitute RHS variable to its value
+		
+int a=20; // a is 20 in memory
+int b=a; // int b=20..... b is 20 in memory
+String c="john"; // c is john in memory
+a=b; // RHS is variable. substitute value of b on RHS
+	// a=20... a is overwritten with same 20 value in memory
+b=a; // RHS is variable. substitute value of a on RHS
+	// b=20... b is overwritten with same 20 value in memory 
+a=30; // a is overwritten with new value 30 in memory
+sysout(a); 30
+sysout(b); 20
+sysout(c); john
+	
