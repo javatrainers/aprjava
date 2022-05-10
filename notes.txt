@@ -86,7 +86,7 @@ Bank Program
 		acctNumber=123456
 		routing number=000111222
 		
-	does/action ***************
+	does/action *************** ( reading or changing information AND communication btw programs)
 		withdraw = 100
 			money deducts = 1000 - 100 = 900 LOGIC****************
 		
@@ -322,3 +322,75 @@ sysout(a); 30
 sysout(b); 20
 sysout(c); john
 	
+
+*********** METHODS
+	just like variables store information. 
+	METHOD ARE RESPONSIBLE FOR READING/CHANGING INFORMATION
+			AND
+	PROGRAM COMMUNICATION
+************
+
+Exchnage of information
+
+CUSTOMER
+	what  is the price of "IPHONE" (input)
+
+SHOP OWNER
+	the price is "1000$" (output)
+
+calculate area of recatnagle
+public int areaOfReccet( int length, int breadth)
+	
+input is provided by your customers
+output is given back by the program
+********* Method Declaration	*********
+	
+		how to recognize methods : Does-A exercise
+		how to code methods :
+			What to name this activity ???  login
+			how many inputs are required ??? what are the data type of each inputs ???   2 inputs, String userid and String password
+			how many outputs are required ??? what is the data type of each output ???   1 output.. boolean
+				
+		PUBLIC 	OUTPUT 	NAME	(INPUT)
+			
+		NAME : similar rules as variables
+			Follow camelCase format in method names
+			Alphabets , numbers, $, _ allowed in method names (cannot start with number)
+			area_Of_Rectangle123
+	
+		OUTPUT : CAN ALWAYS BE 0 or 1 (is mandatory, it has to be just 1.)
+			0 = void  ... 
+				public  void   hello(String message)
+			1 = appropriate data type, int/boolean... 
+				public int add(int a, int b)
+			more than 1 = complex or multiple infor to return, create a new program. 
+				provide data type as the name of the program
+				
+		INPUT : CAN BE 0 , 1 or MORE  ( is optional )
+			0 = if no input require, leave it empty
+				public int bye(  )
+			1 = if 1 input, write data type and name of the input
+				public profile displayProfile(String userid)
+			More = if more than 1 input , separated by comma. data type followed by the name
+				public boolean login(String userid, string pwd)
+******************************************				
+	public	int		calculateCircle 	(int radius)
+	public	long		multiply( int number1, int number2)
+	public	boolean	login(String userid, String password)
+	public 	void		greet(String message)		
+				
+				public int add(int number1, int number2)
+
+				display entire profile of a user (status,friends, chats,posts, address, phone)
+				public Profile display(String userid)
+				
+				public class Profile{
+					String status,
+					String friends, 
+					String chats,
+					String posts, 
+					addr address, 
+					long phone
+				}
+				
+				
