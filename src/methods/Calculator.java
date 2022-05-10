@@ -39,6 +39,8 @@ public class Calculator {
 		return null;
 	}
 	
+	String name; // string object or "reference" data type
+	int a; // primitive or simple data type
 	
 	
 	
