@@ -429,4 +429,22 @@ IS JAVA PASS BY VALUE OR PASS BY REFERENCE
 
 
 
+************** Variable Scope *************
+Variables = Store/hold information
+
+Person
+	(Long term memory)
+		Instance variable = Information About you (personal) 
+			DNA , fingerprints, name,age, lastname, date of birth
+		Class variable = Information About you ( share with thing/speicies like you)
+			hobbies,human,breathe
+	(Short term memory)
+		Parameter variable = Information in the form of Input
+		local variable = temp or local information
+		
+		Input from customer = 10 + 5 + 2 + 4 (parameteric variable)
+			10 + 5 = 15(local variable)
+			15 + 2 = 17
+			17 + 4 = 21
+
 
