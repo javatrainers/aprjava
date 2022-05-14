@@ -42,9 +42,14 @@ public class Calculator {
 		return 123;// programmer promised they will return an output of numbered value(long)
 	}
 	public	int	calculateCircle (int radius) {
-		return 0;
+		
+		
+		
+		return 0;// return statement
 	}
 	boolean	login(String userid, String password) {
+		
+		
 		return true;
 	}
 	public void greet(String message) {

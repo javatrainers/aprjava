@@ -448,3 +448,97 @@ Person
 			17 + 4 = 21
 
 
+
+************** operators ****************
+
+statement : declaration, initialization, method call
+	
+equal sign = assignment operator
+
+	= sign ( assignment operator)
+	ALWAYS PROCESS RHS FIRST
+	LHS IS ALWAYS A VARIABLE
+	RHS can be literal value, variable, method call, expression, new operator etc
+	If RHS has a variable... always substitute RHS variable with its latest value
+		then further proceed with processing.
+	
+	*************************POSSIBLE VALUES ON RHS*****************
+	int a=10; // RHS literal direct value. Value is stored in a
+	
+	int b=a; // RHS can be variable. Value of RHS is substitued. that value gets stored in a variable
+	// int b=10;
+	********* value of a gets stored in LHS variable*******
+	
+	int c=add(a,25); // method call.. control goes to method add. add method result returned will be then stored in a variable
+	// int c=add(10,25); 
+	// int c=35;
+	***** returned value of method call gets stored in LHS variable ********
+	
+	int d=a+50; // expression or operator.. solve the expression firt and store result of expression
+	//int d=10+50; int d=60;
+	***** result of expression gets stored in LHS variable ********
+	
+	Person p=new Person(); // new operator
+	// new = allocate/reserver memory address
+	// Person() = construct digital Person in the above allocated address
+	// design or blue print on how to construct Person in memory is written in "class Person"
+		*****address where Person is created will be stored in LHS variable****
+	***********************************************************
+
+int a=30;
+int b=15;
+add( a, b ); // add(30,15)
+int x=20; // int x=20;
+int y = x; // int y=20;
+int z=x; // int z=20;
+y=z; // y=20;
+int p=x+y; // int p=20 + 20;
+Person per=new Person( x, y );// Person per=new Person(20,20);
+
+1) know what are variables in each line
+2) WHEN NOT TO REPLACE VALUES = if variable on LHS
+
+
+
+public class calculator{
+	public int add(int a, int b){
+		int sum=a+b;
+		return sum;
+	}
+}
+
+method = gateway to access/use our software
+	1) there is method avaialble = guarantees that customers can use my s/w
+	2) HOW will customer use this method ?
+		method declaration provides this info
+		public int add(int a, int b)
+		customer have to provide 2 integer input(numbers)
+		customers can expect to recieve result in the form of number
+
+
+
+everytime we encounter method call.. the control transfers to method declaration line
+
+************ WHAT IS METHOD DECLARATION AND CALL ******************
+Method declaration and method call
+method call = input does not have data type mentioned
+method declaration = output is mandatory. input
+	has data types mentioned
+
+void abc(int a)// method declaration
+public int sub(int a, int b) // method declaration
+(a,b); // method call
+int areaOfSquare(int side) // method declaration
+p.areaOfTriangle( 12 );// method call
+void hello() // method declaration
+bye(); // method call
+int result = div(10,20); // method call
+int mul(int a, int b); // method declaration
+int price=amazon.getProductPrice("iphone"); // method call
+public address getRestaurant(string restName) // method declaration
+
+method declaration
+	if there is void in line
+	if there is data type mentiond in input section
+method call	
+	if there is equal sign	
