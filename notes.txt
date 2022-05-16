@@ -542,3 +542,35 @@ method declaration
 	if there is data type mentiond in input section
 method call	
 	if there is equal sign	
+	
+	
+	
+************* operators ***************
+
+int a; // declaration statement
+a=10; // initialization statement
+a=20;// assignment statement
+
+int sum= add(10,20);
+
+RHS = process to a single value
+
+variable = value .... assignment.... RHS value is assigned to LHS variable
+
+value >> variable... (substitue variable with its latest values)
+value >>  add(10,20) .... 30 ( call the method.. and store the results returned from the method)
+value >>  10+25 .... 35 ( solve the expression and store its result)
+
+
+== comparison.... LHS is equal to RHS
+
+
+Is 10 equal to 5 = no / false
+is 10 greater than 5 = yes/ true
+
+
+
+
+
+
+
