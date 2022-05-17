@@ -107,6 +107,13 @@ public class OperatorTest { // class block
 		System.out.println( f++); // print 11
 		// value tracker..f=12
 		
+		int k=10;
+		k=k+1; // RHS is proceesd first... 
+		// k = 10 + 1
+		// k = 11
+		k++;
+		
+		
 		
 		for(int k=10;k<10;k++)
 		{
