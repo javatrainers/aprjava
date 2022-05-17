@@ -114,11 +114,6 @@ public class OperatorTest { // class block
 		k++;
 		
 		
-		
-		for(int k=10;k<10;k++)
-		{
-			
-		}
 		// nested block
 		{
 			{// local blocks
@@ -126,6 +121,25 @@ public class OperatorTest { // class block
 			}
 		}
 		 
+		System.out.println("****** conditional operator ********");
+		/*
+		 LHS and RHS = boolean value, boolean variable, 
+		 		eqaulity or relational expression
+		 */
+		System.out.println(    true && true );
+		boolean bb1=true;
+		boolean bb2=false;
+		System.out.println(    bb1 && bb2);
+		int bb3=10;
+		int bb4=20;
+		System.out.println(   bb3==bb4 || bb3<bb4 );
+		
+		System.out.println(  10 & 5 );
+		System.out.println(  10 | 5 );
+		System.out.println(  10 ^ 5 );
+		
+		System.out.println(  (10+20) == (6 * 5) &&  (10-3) > ( 20/10) );
+		System.out.println(10+20 *4 / (10-2));
 	}
 
 }

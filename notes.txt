@@ -569,8 +569,82 @@ Is 10 equal to 5 = no / false
 is 10 greater than 5 = yes/ true
 
 
+Logical AND = && : compare userid and password in login page
+		registd userid == login userid 
+			AND 
+		registd pwd = login pwd
+
+TRUE and TRUE = TRUE ( 1 and 1 = 1 )
+TRUE and FALSE = FALSE ( 1 and 0 = 0)
+FALSE and TRUE = FALSE ( 0 and 1 = 0)
+FALSE and FALSE = FALSE ( 0 and 0 = 0)
 
 
+Logical OR = || : forgot password ...
+		registered email = forgot password page entered email
+			OR
+		registered phone = forgot password page entered phone
+
+TRUE or TRUE = TRUE ( 1 or 1 = 1)
+TRUE or FALSE = TRUE ( 1 or 0 = 1 )
+FALSE or TRUE = TRUE ( 0 or 1 = 1)
+FALSE or FALSE = FALSE ( 0 or 0= 0)
+
+exclusive or
+1 ^ 1 = 0
+0 ^ 0 = 0
+1 ^ 0 = 1
+0 ^ 1 = 1
 
 
+Operators		LHS input			RHS input			Output
 
+Arithmetic		numeric			numeric			numeric  ( 1+2	  : 3)
+Equality		object/numeric		object/numeric		boolean  ( 1==2 : false)
+Relational		numeric			numeric			boolean  ( 1<2)   : true)
+unary 				numeric					numeric  ( 1++ : 2)
+conditional	boolean			boolean			boolean   ( true && true : true)
+			(equality/relational)  (equality/relational)
+bitwise		numeric			numeric			numeric   ( 10 &  5 : 0 )
+
+bit = 1 and 0
+
+int a=10;
+int b=20;
+
+conditional or = ||
+
+a == b || b > a
+
+1) 10==20 || 20>10
+2) FALSE || TRUE
+3) TRUE
+
+Operator precedence (priority)
+1) bracket ()
+2) * / % 
+3) + -
+4) relational > <
+5) equality ==
+6) &&
+7) ||
+if you have more than 1 operator in same level = process left to right
+
+10+20 *4 / (10-2)
+10 + 20 * 4 / 8
+10 + 80 / 8
+10 + 10
+20
+
+(10+20) == (6 * 5) &&  (10-3) > ( 20/10)
+ 30 == (6 * 5) &&  (10-3) > ( 20/10)
+ 30 == 30 &&  (10-3) > ( 20/10)
+ 30 == 30 &&  7 > ( 20/10)
+ 30 == 30 &&  7 > 2
+ 30 == 30 &&  true
+ true &&  true
+ true
+ 
+ 
+ 
+ 
