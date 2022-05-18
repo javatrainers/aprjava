@@ -647,4 +647,84 @@ if you have more than 1 operator in same level = process left to right
  
  
  
+ ****************** Control flow ******************* 
  
+ Either or : If - Else
+ Multiple choice OPTIONs : switch case and if-else-if
+ Loop : while, do-while, for
+ 
+ ATM software{
+ 
+	balance = 10000;
+	atmPin = 1234;
+	transaction(){
+		please enter your pin
+		IF ( entered pin == registered atm pin )
+		{
+			welcome to bank
+			transaction LOOP
+					OPTION: deposit
+							balance = balance + deposit amount
+					OPTION: withdraw
+						IF ( balance > withdraw amount)
+							balance = balance - withdraw amount
+						ELSE
+							insufficient fund in account to withdraw
+					OPTION: checkBalance
+						your bank balance is 10000
+						
+			do you wish to perform another transaction
+				yes
+				
+			LOOP BACK	
+		}
+		ELSE 
+			invalid pin
+		
+		thank you for using our bank
+	}
+	
+ }
+ 
+ transaction(){
+		please enter your pin
+		welcome to bank
+		invalid pin
+		balance = balance + deposit amount
+		balance = balance - withdraw amount
+		insufficient fund in account to withdraw
+		your bank balance is 10000
+		thank you for using our bank
+	}
+ 
+Program
+	Variable(HAS-A)
+	int balance=1000;
+	
+	processTransaction()
+	Method(DOES-A){
+		
+		ALGORITHM/LOGIC
+			Operators and Control Flow
+		if(pin matches, reg pin == entered pin)
+			welcome
+		else
+			invalid pin, please try again later
+	}
+	
+	
+	
+	
+	bankloan
+		if(amount > 1000000)
+			loan denied
+		if(creditscore < 700)
+			loan denied
+		else
+			loan approved
+
+
+
+
+
+
