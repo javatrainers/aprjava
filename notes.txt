@@ -843,7 +843,68 @@ do{
 
 if else if else if.... for ... while... do-while
 
+int option=3;
+if(option==1)
+	sysout("withdraw");
+else if(option==2)
+	sysout("deposit");
+else if(option==3)
+	sysout("balance check");
+else 
+	sysout("invalid option");
+
+multi option
+if-else-if
+	if complex operator check
+switch case (performance better)
+	if checking primitive data type
+		or string values
+	
+	
+CHOOSE if-else-if
+	when requires complex multiple
+	condition
+if(userid==regUserid && pwd==regPwd)
+	sysout("login success");
+else if(compare email && password)
+	sysout("login success");
+else if(compare phone && password)
+	sysout("login success");
+else 
+	sysout("login failure");
+
+
+CHOOSE switch case
+	for simple value comparison 
+	against primitive or string data type
+int option=555;
+switch(option){
+	case 1:
+		sysout("withdraw");
+		break;
+	case 555:
+		sysout("deposit");
+		break;
+	case 100000:
+		sysout("balance check");
+		break;
+	default
+		sysout("invalid option");
+		break;
+}
 
 
 
+********** inheritance
+Parent > Child
+Super > Sub
 
+
+super(); // call parent constructor
+super.sub(10,20); // call parent's method sub
+super.x // access parent's variable x
+
+Program is made of
+	Constructor
+	global variable
+	method

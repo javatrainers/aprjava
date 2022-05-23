@@ -6,6 +6,26 @@ public class ControlFlowTest {
 	static int balance = 10000;
 	static int regPin=1234;
 	public static void main(String[] args) {
+		
+		// IF comparing just value against primitive or string data type
+		String opt="john";
+		switch(opt){ // can operate on primitive or string dat type
+			case "andy": // case value should match data type in switch
+				System.out.println("withdraw");
+				break; // mandatory in each case
+			case "john":
+				System.out.println("deposit");
+				break;
+			case "jane" :
+				System.out.println("balance check");
+				break;
+			default: // if no case value match... this is the default case
+				System.out.println("invalid option");
+				break;
+		}
+System.out.println("****end switch case***");
+
+		
 		int enteredPin=1234;
 		// if loop is based upon a boolean input
 		// boolean value, boolean variable, operator that has
@@ -112,6 +132,10 @@ public class ControlFlowTest {
 			System.out.println("do you wish to perform another transaction, enter true/false");
 			choice=sc.nextBoolean();
 		}while(choice);
+		
+		
+				
+		
 	}
 
 }
