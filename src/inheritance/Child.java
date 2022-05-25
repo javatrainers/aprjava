@@ -2,6 +2,8 @@ package inheritance;
 // multiple inheritnace not allowed to avoid ambiguiity/confusion
 // when there is conflicting methods in both parents
 public class Child extends Parent{
+	int y=20;
+	
 	// default constructor for child class looks like
 	public Child() {
 		super(); // parent constructor call
@@ -13,7 +15,7 @@ public class Child extends Parent{
 		
 	}
 
-int y=20;	
+	
 	public int sub(int a, int b) {
 		return a-b;
 	}

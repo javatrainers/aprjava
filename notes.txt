@@ -908,3 +908,95 @@ Program is made of
 	Constructor
 	global variable
 	method
+	
+	
+int a=10;
+int b =20;
+a=b;
+Student s1=new Student();
+Student s2=new Student();
+s1=s2;
+
+
+
+equal assignment operator NEW RULES
+
+LHS=RHS
+RHS can be same data type OR child/sub data type of RHS
+
+
+Parent p =new Parent();
+Parent p=new Child();
+RHS can be child/sub of LHS
+access to variable and Methods are restricted to LHS data type
+
+
+
+Method NEW RULES
+
+method requires X data type... you can pass any variable of type X of sub of X
+
+Iphone i=new IphoneX();
+Iphone i2=new Iphone();
+IphoneX ix=new IphoneX();
+Iphone14 i14=new Iphone14();
+photo( i  );  // photo requires Iphone Data type, i happens to be Iphone data type
+photo( ix  ); // photo requires Iphone Data type, ix happnes to be Child/sub of Iphone data type 
+photo( i14);
+
+// runtime polymorphism... Future proof program
+// this method will work with anu iphone from the past
+// current , as well as ready to be used by any iphone model that comes in future
+public void photoI(Iphone i){
+	i.takePictures();
+}
+
+
+Payment  	> CreditPaymnet 
+		> DebitPayment
+		> cashPayment
+		> cryptoPayment
+CreditPayment cp=new CreditPayment();
+DebitPayment dp=new DebitPayment();
+cashPayment cap=new cashPayment();
+cryptoPayment crp=new cryptoPayment();
+sysout(press 1 for credit, 2 for debit and 3 for cash payment)
+if(option==1)
+	checkOut(cp);
+else if(option==2)
+	checkOut(dp);
+else if (option==3)
+	checkOut(cap);
+else if (option==4)
+	checkOut(crp);
+
+public void checkOut( Paymnet p){
+	p.process();
+	p.chargeAmount();
+}
+
+
+
+Compiletime polymorphism - Overloaded
+	you can resolve conflict without running program.. based upon the input..
+	how to implement
+		1) method name should be same
+		2) input should be different
+		3) can have multiple methods with same name in 
+			child-parent 
+			just child 
+			just parent
+
+Runtime polymorphism - Overriding
+	you can resolve conflict when running program.. based upon the input datatype respective
+		method is called..
+	how to implement
+		1) method name should be same
+		2) input should be same
+		3) can have multiple methods with same name in 
+			child-parent 
+
+
+
+
+
