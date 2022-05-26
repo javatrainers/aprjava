@@ -997,6 +997,244 @@ Runtime polymorphism - Overriding
 			child-parent 
 
 
+Interface : 
+
+	Login : john. jane mike andy
+		john
+		john1!
+	
+	Interface - agreeement... 
+	
+	Profile : display profile
 
 
 
+sub-super class - inherit from 2 parents - ?
+	if both parents have same method with different logic
+		child is confused
+	
+	
+// idea of smartphone	 
+interface IIphone (forward looking prgram) backward compatibility support= default methods
+	call();
+	text();
+	browseInternet();
+	camera(){
+		sdfsdf
+	}
+	
+Iphone implements IIphone
+	call()
+		adadasd
+	text()
+		asdsadasd
+	browseInternet()
+		sdasdsad
+	
+Iphone5 extends Iphone 
+	fingerScan()
+		asdads
+	
+IphoneX extends Iphone5
+	faceScan()
+		asdad
+		
+Iphone13 extends IphoneX
+	applePay()
+		asdadsad
+	
+	
+Interface has support for multiple inheritance = bcos parents have no method logic/body.. so no confusion
+backward compatibility = default methods... has method logic/body
+		conflicting/confusing default method from 2 parents = OVERRIDE mandatory in child
+
+	
+	
+	
+Interface = 100% incomplete
+Abstract class = partially complete program
+Concrete class = 100% complete
+
+Abstract class - Generalization/common
+	partial complete program = some complete methods and some
+						incomplete methods
+		
+
+Flexibility - changes to exisiting code
+New features - collectContactInfo
+
+// contains 2 incomplete method
+IPayment = ***incomplete program***
+	public void collectShippingAddress();
+	public void processpayment();
+	public void collectContactInfo();
+
+// 1 complete "collectShipp" and 1 incomplete method "propay"
+abstract AbPayment implements Ipayment (abstract/incomplete version of IPayment)
+// inherited 2 abstract/incomplete methods
+	// implemented one of the abstract methods
+	collectShippingAddress
+		take street city and zip etc
+	collectContactInfo
+		collect email ad phone
+
+CreditCardPay extends AbPayment 
+	processpayment
+		collect credit card info
+	
+DebitCardPay extends AbPayment 
+	processpayment
+		collect debit card info
+	
+			
+PaypalCardPay extends AbPayment 
+	processpayment
+		paypal userid pwd
+	
+			
+CryptoPay extends AbPayment 
+	processpayment
+		crypto wallet
+							
+************** access privi *****
+
+package - group or categorize programs.. Organize code 
+
+com.amazon.www.login
+	login.java
+	register.java
+	changepwd.java
+	profile.java
+	
+com.amazon.www.browse
+	shopping.java
+	add2Cart.java
+
+com.amazon.www.checkOut
+	payment.java
+	checkout.java
+
+
+programs communicate/connected each other
+
+HAS-A = composition (create references to other program)
+IS-A = inheritance ( extends, implements other program)
+
+
+public class Car{
+	Engine e=new Engine(); // Car HAS-A Engine
+}
+
+public class Engine{
+}
+
+
+public class Phone{
+	make call(){}
+	text(){}
+}
+			SmartPhone IS-A Phone
+public class SmartPhone extends Phone{
+	browse();
+}
+
+If program you are seeking either for (IS-A or HAS-A)	
+belongs to different package... then import statement is required.
+
+ACCESS Privilege
+package Group1
+	Parent : int a=10; add(int a, int b)
+	Child1 IS-A(extends) Parent
+	Other1 HAS-A(refere) Parent
+
+package Group2
+	Child2 IS-A(extends) Parent (require import parent)
+	Other2 HAS-A(refere) Parent (require import parent)
+	
+1) public level access = EVERYONE access
+2) default or package level access
+	Parent
+		int b;
+	ANY program in same package as Parent  = Child1 and Other1 
+
+3) protected level access	
+	Parent
+		Protected int c;
+	ANY program in same package as Parent  = Child1 and Other1 
+	ANY program with IS-A from other package = Child2
+		// everyone except Other2
+4) private level access
+	Parent
+		private int d;
+
+
+************* CONSTRUCTOR AS PRIVATE - ISOLATES THE PROGRAM FROM ANY CONNECTION ******
+
+bankAccount
+	money HAS-A
+	accountnumber HAS-A
+	withdraw DOES
+	deposit DOES
+	savingAccount IS-A 
+	creditAccount IS-A
+	name HAS-A
+	addres HAS-A
+	
+public BankAccount{
+	int money;
+	AccountNumber acctNum;
+	withdraw(){
+	
+	}
+	deposit(){
+		
+	}
+}
+public SavingAccount extends BankAccount{
+	int interst;
+}
+public CreditAccount extends BankAccount[
+	int interest;
+	int creditLimit;
+}
+
+
+
+payment
+guestLogin
+phonePasscode
+creditCard
+Crypto
+login
+
+
+payment IS-A creditcard - NOT all payment are creditcard payment
+creditcard IS-A payment - public class CreditCard extends Payment
+Login IS-A creditCard
+
+
+
+car
+wheel
+nissan
+toyota
+engine
+
+
+car is-a wheel
+car has-a wheel - Y
+wheel is-a car
+wheel has-a car
+
+public class Car{
+	Wheel w=new Wheel(); // HAS-A
+}
+
+car is-a nissan
+car has-a nissan
+nissan is-a car - Y 
+nissan has-a car
+
+public class nissan extends Car{
+	
+}
