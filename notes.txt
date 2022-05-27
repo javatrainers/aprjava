@@ -1238,3 +1238,30 @@ nissan has-a car
 public class nissan extends Car{
 	
 }
+
+
+
+Complete Test 2 and 3 by end of 05/31. Use the same name as Test1.
+	Test 2 = algorithm or logic
+	Scope/Operator/Controlflow				
+	https://kahoot.it/challenge/06426191?challenge-id=d26c8f8e-a26b-40d4-a21f-fc80d3720d98_1653661524877
+	pin-06426191
+	
+	Test 3 = design level
+	constructor-inheritance-polymor-access-final
+	https://kahoot.it/challenge/0636513?challenge-id=d26c8f8e-a26b-40d4-a21f-fc80d3720d98_1653661584449
+	pin-0636513
+	
+Test4
+static-array, exception,thread,String,collection
+
+good coding practice
+
+ICar = Interface
+AbPhone = Abstract
+bankAccount() = method
+customerName = variable
+Bank = class
+
+
+
