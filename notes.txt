@@ -1265,3 +1265,150 @@ Bank = class
 
 
 
+int a;
+String x;
+
+
+
+
+public class Amazon{
+	public static void main(String[] args) {		
+		
+	}
+}
+
+Cannot "launch s/w" Amazon without "creating reference" of Amazon program
+Cannot "create reference" of Amazon program without "launching s/w"Amazon
+
+launch s/w by directly calling main method WITHOUT creating reference
+Amazon.main
+
+
+cus1 and cus2 = variable, reference variable, instance of AmazonCustmer
+AmazonCustomer cus1; // cus1 is DECLARED
+AmazonCustomer cus2=new AmazonCustomer(); // cus2 is INITALIZED/INSTANTIATED
+				// instances/copy 
+
+a and b= variable
+int a; // a is DECLARED
+int b=20;// b is INITIALIZED
+
+AmazonCustomer[] allAmzonCust=new AmazonCustomer[5];
+Array declaration : DECLARED 5 AmazonCustomer variables
+AmazonCustomer  allAmzonCust[0]; 
+allAmzonCust[0]=new AmazonCustomer();
+AmazonCustomer  allAmzonCust[1];
+AmazonCustomer  allAmzonCust[2];
+AmazonCustomer  allAmzonCust[3];
+AmazonCustomer  allAmzonCust[4];
+
+AmazonCustomer cus1; 
+AmazonCustomer  allAmzonCust[0]; 
+
+cus1=new AmazonCustomer();
+allAmzonCust[0]=new AmazonCustomer();
+
+AmazonCustomer cus2;  
+AmazonCustomer cus3; 
+AmazonCustomer cus4; 
+AmazonCustomer cus5; 
+AmazonCustomer cus10000000=new AmazonCustomer (); 
+
+// 1 billion AmazonCustomer =declared and initialized/instantiated
+AmazonCustomer[] allAmzonCust=new AmazonCustomer[10000000];
+for( int i=0;i<allAmzonCust.size();i++)
+	allAmzonCust[i]=new AmazonCustomer();
+	
+	
+	allAmzonCust[0]=new AmazonCustomer();
+	allAmzonCust[1]=new AmazonCustomer();
+	allAmzonCust[99999999]=new AmazonCustomer();
+	
+	
+	
+************** Exception handling ****************
+
+Exception handling provides Programs with ability to recover/take actions
+in the event of a failure
+
+Developers - Why Where What
+	Need the insight on where / what caused the failure
+	Need ability to provide series of steps to fix the problems
+	
+Customers :
+	Customer need not be shown a technical error message in the event of failure
+	need to provide a simple error message or instructions that could be used to
+	take appropriate actions to fix the failure.
+
+EXCEPTION - coding/programming/software problem
+	int a=100/0; // bad program code... software mistake
+	// any number divided by 0 = infinity
+	// short 32,767.. byte 127, int 2 billion, long trillions
+	// NO java data type can store INFINITE number
+
+ERROR - hardware problem
+	facebook = 2 billion customer X 1000 pictures and post and messages X MB,GB
+		2 billion X 10GB
+	8GB ram = insufficient hardware capacity to run FB software from this laptop
+	
+Program failure Category :
+	Exception : programming mistake , logical flaw in programming. these can be easily recovered.
+	Error : SEVERE. cannot recover. 
+	
+Exception program heirarchy
+
+Exception handling blocks
+try = 
+catch
+finally 
+
+try catch
+try finally
+try catch finally
+try catch catch
+try catch catch finally
+
+
+
+
+multiple catch blocks
+ATM
+	try{
+		swipe your card...
+		please enter 4 digit pin...  
+		enter withdraw amount... 
+	}
+	catch(CardCannotReadException cc){
+		sysout( "please dial 1800-java-bank request for new card");
+	}
+	catch(MisMatchPin e){
+		sysout( "please enter proper 4 digit pin");
+	}
+	catch(InsufficientFund e){
+		sysout( "please enter withdraw amount below the balance");
+	}
+	finallY{
+		sysout("thank you for using java bank");
+	}
+	
+	
+try-catch = way to handle the potential failure YOURSELF
+throws = way to let SOMEONE ELSE handle the failure
+	Program/line that calls this method
+
+WHAT, WHERE, HOW
+
+User defined exceptions
+program might HAVE TO fail because of Business limitations
+
+// int range = from -2 billion to +2billion
+int bankBalance=100;
+int withdrawAmount=200;
+
+bankBalance=bankBalance-withdrawAmount;
+100-200=   -100
+NO TECHNICAL LIMITATION
+but BANK BUSINESS DOES NOT WANT TO ALLOW
+NEGATIVE NUMBER IN BANK BALANCE
+
+
