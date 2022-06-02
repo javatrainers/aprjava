@@ -1396,7 +1396,26 @@ try-catch = way to handle the potential failure YOURSELF
 throws = way to let SOMEONE ELSE handle the failure
 	Program/line that calls this method
 
-WHAT, WHERE, HOW
+WHAT, WHERE, HOW : printStackTrace() method
+tracing path on how where you arrived before the program crash/issue
+
+	Exception in thread "main" java.lang.ArithmeticException: / by zero **** WHAT *****
+		at exception.Test.method3(Test.java:13)  ****** WHERE ******
+		at exception.Test.method2(Test.java:9)
+		at exception.Test.method1(Test.java:5)
+		at exception.ExceptionTest2.main(ExceptionTest2.java:8) ***** HOW *****
+
+Compile time exception and runtime exception
+
+
+NullPointerException
+
+Exception handling 
+	handle yourself  = try/catch combo in your code where there is potential exception/failure
+	let someone else handle it = throws ... whoever calls my method , they are required
+				to handle it.
+
+
 
 User defined exceptions
 program might HAVE TO fail because of Business limitations
@@ -1410,5 +1429,34 @@ bankBalance=bankBalance-withdrawAmount;
 NO TECHNICAL LIMITATION
 but BANK BUSINESS DOES NOT WANT TO ALLOW
 NEGATIVE NUMBER IN BANK BALANCE
+
+
+
+
+class Telecom{
+	public void call(int phone){
+		code to make a call
+	}
+}
+
+Telecom t=new Telecom();
+t.call(0);
+
+int phone=0; // NO technical problem
+		     // Business related problem
+
+
+
+public class Bank{
+	int balance=100; // supports + 2 billion to - 2 billion
+					withAmount=1000000
+	public void withdraw(int withAmount){
+		balance=100-1000000, balance=-999900
+		balance=balance-withAmount
+	}
+}
+
+Bank cust1=new bank();
+cust1.withdraw(1000000);// NO techical problem in storing -999k in balance variable
 
 

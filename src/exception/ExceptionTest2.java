@@ -1,8 +1,19 @@
 package exception;
 
+import java.io.IOException;
+
 public class ExceptionTest2 {
 
 	public static void main(String[] args) {
+		
+		Test t=new Test();
+		try {
+			t.method1();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		
 		
 		System.out.println("welcome");
 		try {
@@ -10,11 +21,13 @@ public class ExceptionTest2 {
 			int[] ar=new int[4]; // 0,1,2,3
 			System.out.println( ar[2] );// index outside range
 			// failure related to array index
-			int x=100/2;		
+			int x=100/0;		
 		}catch(ArithmeticException ae) {
+			ae.printStackTrace();
 			System.out.println("do not divide number by zero");
 		}
 		catch(ArrayIndexOutOfBoundsException aa) {
+			aa.printStackTrace();
 			System.out.println(" array index must be size - 1");
 		}
 		finally {
