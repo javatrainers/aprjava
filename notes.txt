@@ -1460,3 +1460,63 @@ Bank cust1=new bank();
 cust1.withdraw(1000000);// NO techical problem in storing -999k in balance variable
 
 
+**************** String ***********
+
+STRING IS OBJECT/REFERENCE DATA TYPE
+
+Primitive data type
+	int age=25; // literal values
+	String name="john"; 
+	
+Object data type
+	Student stu=new Student(); // reference values
+	String name=new String("john");
+
+String pool
+String is Immutable(unchangeable) object : multiple variables share the same object
+	String x="john";
+	x="jane"; // it is allowed.. VARIABLE is not immutable but OBJECT created in memory is 
+						immutable
+	
+Mutation = change
+Immutable = unchangeable
+
+String and Int most widely used data type
+
+
+Javatrainer
+javatrainer
+
+
+
+************ Threads ***********
+
+Customer and Apple Store owner
+
+waiting 
+	Staff : Whenever the new Iphone batch arrive i will notify/call you.
+timed-waiting
+	Staff : Please come-in on Sunday. and we will hve your iphone ready.
+
+
+forecefully terminated = stop(). didnt complete its job
+gracefully terminated = reach the end of run() method.. when thread completes its job
+
+
+
+Thread 1= take customer Order
+Thread 2= Process Payment
+Thread 3= shipping
+Thread 4= shopping
+
+
+Thread2.join();
+
+join - caller program will wait until the other thread has finished its job
+
+class Shipping{
+
+	processPay.join();
+}
+Shipping will wait until the process payment thread has finished its job
+
