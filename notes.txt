@@ -1522,3 +1522,31 @@ Shipping will wait until the process payment thread has finished its job
 
 *************** collection ****************
 
+Set = unique single entity
+Map = Key is unique entity
+
+HashSet = HashMap (unordered)
+TreeSet = TreeMap ( sorted)
+LinkedHashSet = LinkedHashMap ( ordered)
+Hashtable = synchronied hash map version
+
+********** IF programmer stores user-defined data type in ********** 
+SET or key section of MAP
+
+write additional code to support uniqueness quality in set and map
+	hashcode = categorize
+	equals = duplicates
+	
+
+HashSet<String> student; ??? NO, String is in-built.
+HashSet<Restaurant> re; ??? YES, Restaurant is user-defined
+HashMap<String, Food> menu; ????? NO, Key is String in-built
+HashMap<Student, Integer> scores; ???? YES, key is Student user-defined
+
+
+********** IF programmer stores user-defined data type in********** 
+TREESET or key section of TREEMAP
+
+write additional code to support sorting 
+implementing comparable interface
+	compareTo
