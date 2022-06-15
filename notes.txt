@@ -1550,3 +1550,101 @@ TREESET or key section of TREEMAP
 write additional code to support sorting 
 implementing comparable interface
 	compareTo
+	
+	
+	
+	
+**********************
+
+Inbuilt library programs - java.io package
+
+Type of Files :
+	Text based files : .txt, text content files 
+	Binary based files : executable , image, video, audio
+	
+Type of File operation :
+	input (READ): open text file read content, streaming video youtube, 
+	output (WRITE): open texxt file write content, upload picture, video, audio.
+	
+
+Type of file stream : READ and WRITE content FROM/TO location
+	Character stream : text based data transfer from source to destination
+		IM , text , chatting, Email
+		****READER : read content from text file
+		****WRITER : write content into text file
+	Binary Stream : binary based data transfer from source to destination
+		stream video, upload image/video
+		****INPUTSTREAM : read content from binary file
+		****OUTPUTSTREAM : write content into binary file
+		
+
+Read & writing :
+	buffered : read and write multiple character or multiple bit at a time
+	non-buffered : read and write 1 character(text data) or 1 bit(binary data) at a time
+
+Data source and destination
+	Remote machine : Java environment TO/FROM remote machine (FB machine, Youtube machine)
+		Download : Data transferred from remote machine(youtube/netflix) TO your laptop/device
+		Upload : Data transferred from Your machine TO (FB/Youtube)
+	local machine : Java environment TO/FROM Hard disk drive
+
+
+File - decorator design pattern
+
+
+File f=new File("d:/Tutorial/xyz.txt");
+FileWriter fw= new FileWriter(f)  ; // initialize File writer
+BufferedWriter bw=new BufferedWriter(fw);
+
+File = connection to the destination
+decorate with writing capaibilities ( FileWriter fw= new FileWriter(f)  ;)
+decorate with buffered writing capabilities
+
+group of character : txt files
+STRING = group of character
+READING AND WRITING TXT FILES
+	File f=new File("d:/Tutorial/xyz.txt");
+	FileWriter fw= new FileWriter(f)  ; // initialize File writer
+	BufferedWriter bw=new BufferedWriter(fw);
+	bw.write("hello how are you");			// write string content on this file
+	bw.close();
+
+
+	File f1=new File("d:/Tutorial/xyz.txt");
+	FileReader fr= new FileReader(f1); // initialize filereader object with file path		
+	BufferedReader readFile = new BufferedReader(fr); 
+	String line = readFile.readLine();		// the first line is copied in a string
+	while (line  != null) {					// if the line is not null enter the loop and print
+		System.out.println(line);
+		line = readFile.readLine();
+	}
+	
+1-0 : binary data
+byte = binary data type
+byte array = group of bytes
+READING AND WRITING BINARY FILES
+	File f=new File("d:/Tutorial/xyz.txt");
+	FileOutputStream fw= new FileOutputStream(f)  ; // initialize File writer
+	BufferedOutputStream bw=new BufferedOutputStream(fw);
+	byte[] binaryData;
+	bw.write( binaryData );			// write string content on this file
+	bw.close();
+
+
+	File f1=new File("d:/Tutorial/xyz.txt");
+	FileInputStream fr= new FileInputStream(f1); // initialize filereader object with file path		
+	BufferedInputStream readFile = new BufferedInputStream(fr); 
+	byte line = readFile.read();	// the first line is copied in a string
+	while (line  != null) {					// if the line is not null enter the loop and print
+		System.out.println(line);
+		line = readFile.readLine();
+	}
+
+
+
+
+
+
+
+
+
