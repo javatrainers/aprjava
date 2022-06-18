@@ -1,0 +1,68 @@
+internet - network of computers (global) billions
+	wireless : satelites inter connected devices such a Phones/mobiles
+	wireline : home internet ... copper/fiber cable
+	
+intranet - closed network , corporate, educational, organization ( 1000 or millions)
+LAN - home network
+
+ip - 
+	IPv4 = IP version 4
+	IPv6 = IP version 6 - 32 digit 
+	
+cell phone users - every cell phone has unique phone number
+
+Every internet connected devices has unique ID.... IPAddress
+	Internet Protocol Address
+
+IP address = to identify a internet connected device
+out of billions of devices.
+(phone,tablet,pc,laptop, smart watch, smart thermostat, smart refrigeration, smart tv)
+IPv4 = ipaddress version 4
+x.x.x.x = 256 X 256 X 256  X 256 = 4 billion ip addresses
+x= 0-255 = 256 possibilities
+12.224.123.78
+0.0.0.0
+0.0.0.1
+0.0.0.2
+0.0.0.3
+255.255.255.255
+
+
+
+8 billion people = 4 billion using internet
+	laptop  , cellphone, smart watch, smart tv
+	Total devices are connected to the internet =
+	4 billion users X number of internet device(atleast 2 device) 
+	
+every device need to have unique ip address
+ip address in total = 4 billion
+total internet connect devices = 10 billion
+
+Not enough unique ip address for each of device on internet
+	
+IPv6 = ipaddress version 6.. trillions and trillions of ip address possibility
+
+32 digit long number
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+x=0-9 or A-F ( hexa decimal = 0-9 and first 6 alphabets)
+
+4A9C:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+
+
+WAN IP : ip assigned to device that are directly connected to internet
+LAN IP : ip assigned to device that are connected to internet service device such as ROUTER
+
+domain name = alias to ip address just like contact name vs phone number
+
+port/socket 
+dns  
+dhcp
+router - route traffic
+load balancer 
+
+n/w commands
+	ipconfig - show my lan ip address
+	netstat -a - show all ports open
+	ping - remote machine is reachable and response time (round trip time)
+	telnet - website software is open on remote aws machine
+	tracert - find delay in the network (trace route)
