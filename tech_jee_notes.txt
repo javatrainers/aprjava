@@ -62,7 +62,175 @@ load balancer
 
 n/w commands
 	ipconfig - show my lan ip address
+		display hosts ip address
 	netstat -a - show all ports open
+		network statistic - host ip/port >>>>> server ip/port
+					
 	ping - remote machine is reachable and response time (round trip time)
+		
 	telnet - website software is open on remote aws machine
 	tracert - find delay in the network (trace route)
+
+
+
+
+
+
+***********************
+
+Website project
+	1) How do you write program that can be hosted on internet... additional library/program to be included in project
+		project depedancy - Spring web
+	2) Project structure - java stored in src/java folder... web/html program in src/main/resource/webapps
+	3) Web Server software - Apache Tomcat 
+	4) (BUILD) Package your website s/w - single exe/setup file ( archived/compressed
+		all your programs)
+		Spring-boot : Type-Maven... packaging - WAR
+		
+		
+		
+Spring Boot 
+	Project Eco System - Helps with all the above
+
+
+
+jar - group of java programs ( Java ARchive)
+	single setup/executable file that consists of java 
+war - group of web pgrams (Web ARchive)
+	single setup/executable file that consists of java/html/images/video
+
+Chrome browser s/w
+	chrome browser s/w : written with 100s or 1000s of programs
+	install chrome browser : installation... where ALL programs that make
+		up your software are PACKAGED in a single setup/exe file
+		setup/install file : package/compressed/archive file that contains
+			100s/1000s of your programs
+
+setup Spring boot project in your laptop..
+when u launch Spring boot project in your laptop...
+	website accessible to you only : by entering localhost in your laptop browser
+	
+Deploying : 
+	1) package your code in setup/exe file
+	2) upload your exe file onto Cloud (AWS, Mic Azure, Google cloud)
+	3) install  your exe file in Cloud (AWS, Mic Azure, Google cloud)
+	4) launch your website from cloud
+	
+	free tier = trial account
+	
+	
+Programming /devlopment : on your laptop
+local website testing on your machine (local/developent setup = website is accessible to you)
+	start website locally on spring tool suite s/w = right click on xxxApplicatino.java > run as > java application
+	Use browser to test your website
+	http://localhost
+	validate your changes 
+Build
+	New changes on website program has to be re-packaged into
+	new setup file
+	pom.xml > right click > maven install
+	generate new setup file
+	Project location > target folder > xxxxx.war
+production Deployment (production = website is accessible to the public)
+	upload xxxx.war file onto AWS machine (Winscp or Terminal)
+	remote login into aws machine (putty)
+		start your website = java command on setup/exe file  xxxx.war
+		WEBSITE IS LIVE FOR EVERYONE ( with changes that u did to the website)
+
+website is down for maintainance
+please try again later
+
+
+Local setup = your laptop
+pre-production setup
+production setup = aws machine leasing/renting from cloud
+
+Athlete prepare
+	baseball athelete
+		net practice = small setup for practice
+		game practce = bigger ground ... practice among your team member
+		competiion = same sized ground as game practice... 
+
+
+Build
+deployment
+production release
+dev testing
+
+
+sudo nohup java -jar asdsad.war &
+
+sudo  - super user 
+	login ec2-user .. not  a admin user... sudo admin privileges
+nohup - nohangup 
+	java program will be running in background
+java -jar ... java command substitute ( click of run button on sprint tool suite)
+& - console output is basicually redirected to a flaat file
+	nohup.out
+	
+***************** XML *********************
+
+
+xml - data format
+extensible markup language - meta data (information about data)
+UTF - 8 = write data in ascii character
+UTF - 16
+dtd = document type definition
+xsd = xml schema design
+	type of each eleemnt = city element stores text value, zip element store numberedd value
+	validation = customer element can have more than 1 address element, building name is optional
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MyDocs SYSTEM "filename.dtd">
+<customer>
+	<address>
+		<building>
+			<buldingName  buildingNumber="1234"  >asd</buldingName>
+			<streetName>ads</streetName>
+		</building>
+		<city>asd qeerw</city>
+		<state>asd qeerw</state>
+		<zip>1223</zip>
+		<phone>
+			<areaCode>123</areaCode>
+			<number>1231111</number>
+		</phone>
+	</address>
+	<address>
+		<building>asdadq</building>
+		<city>fdgfg</city>
+		<state>ertret</state>
+		<zip>1231</zip>
+		<phone>222222</phone>
+	</address>
+</customer>
+element : nested (element within an element)
+	represented with anchor tags. every opened element has to be closed ( STRICTLY TYPED LANGUAGE )
+	<>=opening tag/element
+	</>=closing tag
+	root element = first element in xml file.. customer.. there can be only 1 root element
+	parent element = address is parent of building
+	child element = building is child of parent
+	sibling element = building and city. city and state etc
+	elements = represent complex value.. information that can be further divided..
+	value = non-element text information.. between opening and closing tag
+attributes : information might be atomic... indivisible....
+	key-value pair.. and are associated with an element
+	building number = 12334
+	
+	
+**************** HTML *****************
+
+web content resource - webpage, image, video
+Hyper-Text : links to other web content resoures text
+HTML : Hyper-Text Markup language
+HTTP : Hyper-text Transfer protocol (Fedex,USPS)
+Browser : Http Client... Understands Html , converts
+	HTML program into Graphical Display
+	
+	
+	HTML : TEXT and INPUT section of webpage
+CSS :Cascading Style Sheet 
+	dimension, color,size, position, 
+	animation
+JavaScript : validation, animation
+	
