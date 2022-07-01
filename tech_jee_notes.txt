@@ -25,7 +25,7 @@ x= 0-255 = 256 possibilities
 0.0.0.1
 0.0.0.2
 0.0.0.3
-255.255.255.255
+255.255.255.255 
 
 
 
@@ -290,5 +290,25 @@ function add( a , b ){
 	var sum=a+b;
 	return sum;
 }
+
+
+
+Event listeners : track customer activity,
+	Mouse : movement, click
+	
+	Keyboard : typing
+
+	HTML : focus, blur, load, unload
+	
+	
+Html element :
+	id = javascript uses this attribute to access customer input
+	class = css uses this provide styling , animation, color, dimensions
+	name = java (server side program) uses this attribute to access customer input
+	
+	
+TRANSFER CONTROL FROM HTML TO JS : EVENT LISTENERES
+DATA GETS ACCESSED FROM JS TO HTML : ID ATTRIBUTE
+
 
 
