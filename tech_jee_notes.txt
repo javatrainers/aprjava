@@ -234,3 +234,61 @@ CSS :Cascading Style Sheet
 	animation
 JavaScript : validation, animation
 	
+
+Event listeners : when customer interacts..
+	Customer interact with website... Mouse or Keyboard
+	
+	
+	
+Frontend
+	html : webpage input elements , images, video
+	css : styling of webpage includes dimensions, colors, alignment, animation
+	javascript 
+Backend
+	java
+	
+	
+java : variable and methods and control flows ( if , while, for )
+	variable : simple/primitive, and object/complex
+		String name; int age; String city; float height;
+		public class student{
+			String school="java school";
+			int grade=12;
+			String name="john";
+			public void sayHello(){
+			}
+		}
+		Student s=new Student();
+		s.grade
+		s.sayHello();
+		
+javascript : variable and functions
+		var name="john"; 
+		name=20;
+		
+		var age=10; 
+		var height=12.1;
+		var active=true;
+		var s={
+			school:"javascript school",
+			grade:2,
+			name:"john"
+		};
+		console.log( s.grade );
+
+Java method :
+
+int result=add( 10 , 20);
+public int add(int a, int b ){
+	int sum=a+b;
+	return sum;
+}
+
+javascript function :
+var result=add(10,20);
+function add( a , b ){
+	var sum=a+b;
+	return sum;
+}
+
+
