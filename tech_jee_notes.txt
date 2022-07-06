@@ -320,14 +320,25 @@ javascript framework
 2) animation
 3) decoupled architecutre
 
+<div id="one">
+	<div id="two">
+	</div>
+</div>
 
+<div id="three">hi john</div>
 
+$("#two").parent
 
+html content inside an element = 
+	$("#one").html()  >>>> <div id="two"></div>
+text content in an element
+	$("#three").text()  >>>>>> hi john
+customer typed input from the webpage
+	$("#userid").val()
 
-
-
-
-
+above methods are overloaded... 
+$("#userid").val()		= READ what customer typed in userid text box
+$("#userid").val("please type userid") = WRITE text in userid text box
 
 
 
