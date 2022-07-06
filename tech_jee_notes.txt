@@ -312,3 +312,22 @@ DATA GETS ACCESSED FROM JS TO HTML : ID ATTRIBUTE
 
 
 
+*********** JQuery ****************
+
+javascript framework
+
+1) simple coding
+2) animation
+3) decoupled architecutre
+
+
+
+
+
+
+
+
+
+
+
+
