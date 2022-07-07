@@ -300,7 +300,7 @@ Event listeners : track customer activity,
 
 	HTML : focus, blur, load, unload
 	
-	
+HTML / CSS / Javascipt / Java	
 Html element :
 	id = javascript uses this attribute to access customer input
 	class = css uses this provide styling , animation, color, dimensions
@@ -342,3 +342,84 @@ $("#userid").val("please type userid") = WRITE text in userid text box
 
 
 
+name = java
+id	= javascript
+class = CSS
+
+
+browser/html program
+	on click of a button
+	
+	website name = ? http://localhost/
+	action attribute value = ? login 
+	what are the name attributes in html form = ? userid , password
+	what are the input in each of html elements = ? mike , mike123
+	
+	constructed upon a click of a button
+	http://localhost/login?userid=mike&password=mike123
+	
+	http://localhost : address of website server machine (domain name)
+	/login		: connected to a SPECIFIC java program on that website server machine (there can be more than 1 java program)
+	?			: query string 
+	userid=mike&password=mike123 :
+		& acts like infor separator
+		key=value pair allows us to identify information
+	
+	userid=jane&password=jane123
+	qweqwe & dfgdfgdg & qeqweqwe
+	
+	
+
+
+HTTP
+	transportation service - web content
+	Return service - info travel both ways (bi-directional)
+		Request : info travels from customer to server machine
+		Response : info travels from server machine to customer
+		
+	courier service :
+		content/package : confidential paper, electronic, furniture
+		label : 
+			from : john doe, ny
+			to : jane doe, 123 street, nj, usa, 12345
+			content-type : confidential paper / bio-degrable / glass handle with care
+			weight : 1 pounds
+			
+	Http :
+		Body : digital internet data
+			text , images , audio, video, binary file
+		Header : 
+			to : www.google.com
+			from : 123.1.2.2
+			content type : text/image/audio
+			content size : 5 KB
+	
+	tranportation method
+		get - infor transferred in http url
+			data is transferred from the header NOT SAFE
+			size of data is limited
+			data type is only text in rquest
+			get can be cached ( PRO )
+		post - infor transferred in http body 
+			data is transferred SECURELY from within the body/package
+			size of data is unlimited
+			all kind of data type
+			post cannot be cached
+	
+	Http status code
+		2XX = Successful completion ( 200 )
+		3XX = successfull but with redirection ( 302, 301 )
+		4XX = Failure... problem is on customer side
+		5XX = Failure... problem is on server side
+		
+		
+1) configure servletcomponentscan in xxxAppliation.java
+2) create a java program
+3) @webservlet("login") = configure java program to a URL
+4) extend java program with HTTPServlet
+5) prepare doGet and doPost method in java program
+
+		
+		
+		
+		
