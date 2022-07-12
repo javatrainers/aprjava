@@ -420,6 +420,88 @@ HTTP
 5) prepare doGet and doPost method in java program
 
 		
+calling method :
+	initialize java program = LoginServlet ls=new LoginServlet();
+	ls.doPost(
 		
-		
-		
+Apache Tomcat : map URL to server program, initialize server program, destry server program
+	webserver software
+	servlet container
+
+glassfish, jboss, weblogic, websphere, IIS
+
+
+Servlet
+	constructor
+	init() = setup during website startup
+	service() = NEVER NEVER override
+	doGet() =  override implementation
+	doPost() = override implementation 
+	destroy() = cleanup during website shutdown
+
+
+Server program Response
+	Webpage
+		redirect : when servlet program has to transfer control outside our website project
+		forward : when servlet program has to transfer control within our website project
+	
+	text content
+		res.getWriter().write
+	
+	binary content
+		res.getOutputStream().write
+	
+	
+Http : stateles protocol
+	http cannot remember state of conversation
+	
+	
+	request.getHeader("Content-Length");
+	
+	
+	
+
+********************** 
+
+Static webpage : wikipedia
+	HTML program
+
+
+Dynamic webpage : gmail, facebook
+	JSP - Java Server Pages
+	JSP = HTML + java
+	
+	variable- vary - changes
+	
+	
+Servlet can contain - html and java
+	primary focus is Java
+jsp can contain - html and java
+	primary focus is HTML
+	
+	
+
+Expressions
+variable... expression
+<%=    %>
+
+scriptlet : multi line java code.
+variable declared, call method, coontrol flow
+<%	%>
+
+
+
+Server-side Program
+	Servlet
+	Rest webservice
+	Soap webservice
+	Spring MVC
+	Strut framework
+	
+	
+	
+	
+	
+	
+
+
