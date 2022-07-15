@@ -499,9 +499,257 @@ Server-side Program
 	Strut framework
 	
 	
+	area of square = side
+	http://localhost/areaOfSquare/5
 	
+	area of rectange = length breadth
+	http://localhost/areaOfRectangle/5/4
+	http://localhost/areaOfRectangle?length=5&breadth=4
+********************web service *****************
+
+Rest webservice with JSON input or output
+
+PUBLISHING Services
+	Rest webservice : Http
+		Input 
+			Get : input is part of URL
+				path based input : http://localhost/areaOfSquare/5
+				query based input : http://localhost/add?number1=25&number2=45
+			
+			Post : complex input... input is part of BODY
+				receive complex JSON input
+				1) create java program compliant with json string
+					input={
+							"name":"java",
+							"age":10,
+							"active":true
+						}
+					public class JSONCompliantInput{
+						String name;
+						int age;
+						boolean active;
+						// get set methods
+					}
+					
+					
+				
+				
+				
+				
+		Output		
+			Rest webservice that can return complex JSON output
+
+	Soap webservice : deals with xml only.
+		Post : 
+		
+CONSUMING services
+	*********Get : input is part of URL*********
+			path based input : http://localhost/rectangle/10/20 (input is not tagged)
+			query based input : http://localhostcalSI?p=1000&t=30&r=5
+		What is the webservice url
+		what is the input required in url
+			http://localhost/rectangle/10/20
+		what is the output from webservice
+			integer
+			
+
+		RestTemplate rectangle=new RestTemplate(); // Rest stub program
+		int res=rectangle.getForObject("http://localhost/rectangle/10/20", Integer.class);
+		System.out.println("area of rectangle is :"+res);
+
+					
+		RestTemplate calSI=new RestTemplate(); // Rest stub program
+		int res=calSI.getForObject("http://localhost/calSI?p=1000&t=30&r=5", Integer.class);
+		System.out.println("simple interest is :"+res);
+
+	*********Post : complex input... input is part of BODY*********
+		receive complex JSON input			
+
+		What is the webservice url
+			http://localhost/calSimpleInterest
+		what is the input required in url
+			{
+				"principal":100000,
+				"time":30,
+				"rate":5
+			}
+		what is the output from webservice
+			integer
+			
+		Create java program that is JSON input compliant
+		public class WSClientSimplInterest{
+			int principal=100000;
+			int time=30;
+			int rate=5;
+			// get set methods
+		}
+			RestTemplate calPostSI=new RestTemplate(); // Rest stub program
+			WSClientSimplInterest myInput=new WSClientSimplInterest();
+			int res=calPostSI.postForObject("http://localhost/calSimpleInterest",  myInput , Integer.class);
+			System.out.println("simple interest is :"+res);
+		
+			
+		int res=calPostSI.postForObject("http://localhost/calSimpleInterest",  myInput , Integer.class);
+		int res=calSI.getForObject("http://localhost/calSI?p=1000&t=30&r=5", Integer.class);
+						
+
+		*********Complex JSON output*********
+		
+		What is the webservice url
+		what is the input required in url
+			http://localhost/multiOutput/5
+		what is the output from webservice
+			{
+			    "square": 25,
+			    "cube": 125,
+			    "areaOfCircle": 78.53981633974483
+			}
+			
+			
+		public class ComplexOutputJson{
+			int square;
+			int cube;
+			double areaOfCircle;
+			//get set methods
+		}
+		RestTemplate multiOp=new RestTemplate(); // Rest stub program
+		ComplexOutputJson res=multiOp.getForObject("http://localhost/multiOutput/5", ComplexOutputJson.class);
+		System.out.println("mutli output is :"+res);
 	
-	
+			
+			
+			
+wsdl file = documentation / description of soap webservice
+
+Swagger = documentation tool for Rest webservice
+
 	
 
+WSDL : webservice Description language
+wisdal
+	is an xml file
+	this file describes about your webservice 
+	( IN PLATFORM NEUTRAL DESCRIPTION LANGUAGE)
+		What is the webservice URL
+		what are the features/operations in the webservice
+		what is the input and output from each operation
 
+
+How to create soap webservice
+	top-down approach - Expert programmer (Spring webservice)
+		1) Manually create wsdl file
+		2) generate java program from wsdl file
+	bottom-up approach - Apache CXF framework
+		annotation based soap webservice development
+		1) create java program 
+		2) link the program to a http url
+			endpoint configuration
+		3) wsdl file is automatically created from java program
+
+
+wsdl file can contain XSD link
+
+XSD = Xml Schema Definiation
+	Purpose of this file is validation
+	VALIDATE if customer sent mandatory inputs or not
+		
+
+
+DOCUMENT LITERAL	: 
+	DOES NOT WORK IF 2 METHODS HAVE SAME INPUT
+<types> 
+	<schema> 
+		<element name="xElement" type="xsd:int"/> 
+		<element name="yElement" type="xsd:int"/> 
+	</schema> 
+</types> 
+DOCUMENT LITERAL WRAPPED : INCLUDES OPERATION NAMES
+	DOES NOT WORK FOR OVERLOADED METHODS
+	ADD 2,3,4
+<types> 
+	<schema> 
+		<element name="add"> 
+			<complexType> 
+				<sequence> 
+				<element name="x" type="xsd:int"/> 
+				<element name="y" type="xsd:int"/> 
+				</sequence> 
+			</complexType> 
+		</element> 
+		<element name="addResponse"> 
+		<complexType/> 
+		</element> 
+	</schema> 
+</types
+
+
+
+
+Rest webservice Data conversion ( Spring Rest Webservice Framework  = @RestController)
+	JSON to JAVA 	& 	JAVA to JSON = JACKSON library
+
+
+Soap webservice Data conversion ( Apache CXF = @WebService)
+	XML to JAVA 	& 	JAVA to XML = JAXB library (JAva Xml Binding)
+
+
+var name="john";
+var age=10;
+
+Javascript object
+	var person={
+		name:"jane",
+		age:15,
+		city:"ny",
+		zip:12345
+	};
+	
+JSON - Java Script Object Notation = String version of Javascript object
+	var person={
+		"name":"jane",
+		"age":15,
+		"city":"ny",
+		"zip":12345,
+		"active":true
+	};
+	
+JSON - data format represntation
+	simple input
+http://localhost/login?userid=john&password=john123
+	complex input : 
+		how to transport complex input : Http post 
+		data format : XML /JSON
+	<FBAccount>	
+		<name>
+			<firstName>john</firstName>
+			<lastName>doe</lastName>
+		</name>
+		<Screnname>javaJohn</Screnname>
+		<dob>1990</dob>
+		<school>ny university</school>
+		<FriendsList>
+			<friends>jane</friends>
+			<friends>tony</friends>
+		</FriendsList>
+		<posts>
+			<post>election news</post>
+			<post>cdc news</post>
+		</posts>
+	</FBAccount>		
+	
+		
+fb Account: 
+	name
+	screen name
+	last name
+	dob
+	school
+	friends list
+	post
+	message
+	
+	
+	
+	
+	
+	
