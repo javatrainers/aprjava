@@ -516,7 +516,8 @@ PUBLISHING Services
 				path based input : http://localhost/areaOfSquare/5
 				query based input : http://localhost/add?number1=25&number2=45
 			
-			Post : complex input... input is part of BODY
+			Post : complex input... input is part of BODY ( XML or JSON )
+			
 				receive complex JSON input
 				1) create java program compliant with json string
 					input={
@@ -524,20 +525,84 @@ PUBLISHING Services
 							"age":10,
 							"active":true
 						}
+						
+					JSON MAPPER  : transfer data from JSON to Java variables
+					
 					public class JSONCompliantInput{
 						String name;
 						int age;
 						boolean active;
 						// get set methods
+						// get = read values
+						// set = write values.. JSON mapper will set "java" value onto java variable "name"
 					}
+				2) webservice method should include json compliant java program
+					as the parameter with annotation @RequestBody
+				3)    Webservice method should be mapped to a URL
+						@RequestMapping(value = "/jsonReqMul"
+					Webservice input should be marked as post service
+						method = RequestMethod.POST
+					Webservice input content type
+						consumes = MediaType.APPLICATION_JSON_VALUE
 					
-					
-				
-				
-				
 				
 		Output		
-			Rest webservice that can return complex JSON output
+			Rest webservice that can return complex output ( JSON / XML )
+			Take 2 input of type numbers
+				http://localhost/complexOutput/20/10
+			return addition, sub, mul,div to the customer					
+				{
+					"add":30,
+					"sub":10,
+					"mul":200,
+					"div":2
+				}
+
+			1) create json compliant java program
+				public class ComplexJsonOutput{
+					public int add;
+					public int sub;
+					public int mul;
+					public int div;
+					// get set methods
+				}
+			2) create java webservice method	with return type as above json compliant java program
+				public 	ComplexJsonOutput  complexOutput(int a, int b){
+					ComplexJsonOutput  co=new ComplexJsonOutput  ();
+					co.add=a+b;
+					co.sub=a-b;
+					co.mul=a*b;
+					co.div=a/b;
+					return co;
+				}
+			3) method from step#2 has to be published as a webservice
+			
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	Soap webservice : deals with xml only.
 		Post : 
@@ -685,13 +750,6 @@ DOCUMENT LITERAL WRAPPED : INCLUDES OPERATION NAMES
 
 
 
-Rest webservice Data conversion ( Spring Rest Webservice Framework  = @RestController)
-	JSON to JAVA 	& 	JAVA to JSON = JACKSON library
-
-
-Soap webservice Data conversion ( Apache CXF = @WebService)
-	XML to JAVA 	& 	JAVA to XML = JAXB library (JAva Xml Binding)
-
 
 var name="john";
 var age=10;
@@ -749,7 +807,17 @@ fb Account:
 	message
 	
 	
-	
+Rest webservice Data conversion ( Spring Rest Webservice Framework  = @RestController)
+	JSON to JAVA 	& 	JAVA to JSON = JACKSON library
+
+
+Soap webservice Data conversion ( Apache CXF = @WebService)
+	XML to JAVA 	& 	JAVA to XML = JAXB library (JAva Xml Binding)
+
+
+
+
+
 	
 	
 	
