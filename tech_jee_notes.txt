@@ -690,7 +690,7 @@ Swagger = documentation tool for Rest webservice
 
 	
 
-WSDL : webservice Description language
+WSDL : WebService Description language
 wisdal
 	is an xml file
 	this file describes about your webservice 
@@ -706,19 +706,46 @@ How to create soap webservice
 		2) generate java program from wsdl file
 	bottom-up approach - Apache CXF framework
 		annotation based soap webservice development
-		1) create java program 
+		1) create java program and add @WebService annotation above class name
 		2) link the program to a http url
 			endpoint configuration
 		3) wsdl file is automatically created from java program
 
+XML file has 
+	DTD(Document type definition) or XSD(XML Schema Definition)
+		Validation - mandatory element, occurence of element
 
+<address>
+	<streetNumber> OPtional
+	<city> mandatory
+	<state> mandatory
+	<zip> mandatory
+</address>
+<address>
+	<city> mandatory
+	<state> mandatory
+	<zip> mandatory
+</address>
+
+
+
+RPC
+	cannot validate input - XSD operation detail is missing
+	handles simple data type (int, float, boolean, String)
+	faster
+Document
+	can validate input
+	handles simple/complex data type (Object data type, collections )
+	slower
+	
+	
 wsdl file can contain XSD link
+
 
 XSD = Xml Schema Definiation
 	Purpose of this file is validation
 	VALIDATE if customer sent mandatory inputs or not
 		
-
 
 DOCUMENT LITERAL	: 
 	DOES NOT WORK IF 2 METHODS HAVE SAME INPUT
@@ -750,74 +777,36 @@ DOCUMENT LITERAL WRAPPED : INCLUDES OPERATION NAMES
 
 
 
-
-var name="john";
-var age=10;
-
-Javascript object
-	var person={
-		name:"jane",
-		age:15,
-		city:"ny",
-		zip:12345
-	};
+Document literal : driven not by operation name but by input 
+	<soap:body> 
+		<xElement>25</xElement> 
+		<yElement>50</yElement> 
+	</soap:body>
+	CANNOT BE USED - if webservice has 2 methods with same input
+Document literal wrapped : driven not by input but by operation name
+	<soap:body>
+		<add>
+			<xElement>25</xElement> 
+			<yElement>50</yElement> 
+		</add>
+	</soap:body>
+	CANNOT BE USED : if webservice has overloaded methods
 	
-JSON - Java Script Object Notation = String version of Javascript object
-	var person={
-		"name":"jane",
-		"age":15,
-		"city":"ny",
-		"zip":12345,
-		"active":true
-	};
+public class calc{
+	public int sub(int a, int b){
+		return a-b;
+	}
+	public int add(int a, int b){
+		return a+b;
+	}
+	public int add(int a, int b, int c){
+		return a+b+c;
+	}
 	
-JSON - data format represntation
-	simple input
-http://localhost/login?userid=john&password=john123
-	complex input : 
-		how to transport complex input : Http post 
-		data format : XML /JSON
-	<FBAccount>	
-		<name>
-			<firstName>john</firstName>
-			<lastName>doe</lastName>
-		</name>
-		<Screnname>javaJohn</Screnname>
-		<dob>1990</dob>
-		<school>ny university</school>
-		<FriendsList>
-			<friends>jane</friends>
-			<friends>tony</friends>
-		</FriendsList>
-		<posts>
-			<post>election news</post>
-			<post>cdc news</post>
-		</posts>
-	</FBAccount>		
-	
-		
-fb Account: 
-	name
-	screen name
-	last name
-	dob
-	school
-	friends list
-	post
-	message
-	
-	
-Rest webservice Data conversion ( Spring Rest Webservice Framework  = @RestController)
-	JSON to JAVA 	& 	JAVA to JSON = JACKSON library
+}
 
 
-Soap webservice Data conversion ( Apache CXF = @WebService)
-	XML to JAVA 	& 	JAVA to XML = JAXB library (JAva Xml Binding)
+****************** CONSUMING WEB SERVICE ***********
 
 
 
-
-
-	
-	
-	
