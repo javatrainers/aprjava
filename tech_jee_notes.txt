@@ -804,9 +804,607 @@ public class calc{
 	}
 	
 }
+********************* LOG 4J **************
 
 
-****************** CONSUMING WEB SERVICE ***********
+facebook software is 99.99% perfect
+1000 mill = 1 billion
+0.01% of 2 billion = 200 thousand
+
+Production support : Fixing/Resolving customer issues
+
+ATT - telecom 
+	customer will call Tech support 1800 - 90% of issues are handled by
+		trained tech support.
+		1) what is your name ? mike
+		2) what is your contact number ? 123123123
+		3) what is your account number ? 12312312
+		4) what is your problem ?  cannot divide 2 numbers
+		5) what time did this occur ? 4:45 4:50
+
+SYSOUT limitation
+1) no timestamp 
+2) no information on program
+3) console messags are temprory ( console message are lost when restart website)
+4) Controlled printing : when to print and when not to
+
+log4j
+22-07-20 17:21:24       RestCalculator:34 -  customer mike is trying to divide 100 and 0
+sysout
+customer mike is trying to divide 100 and 0
+
+LOG4J
+configuration :
+src/main/resources = create file names log4j.properties
+
+1) configure in log4j.properties
+2) configure in log4j.properties
+3) print message in console as well as a flat text file on hard drive
+
+
+debug : detailed message printing ( in development )
+info	: highlight /significant event printing
+warn : some critical event occured in our software
+error : prinnt error messge... when exception happens ( in production/internet) 
+
+
+debug > info > warn > error
+
+
+************* JDBC ************
+Workbench - (SQL CLIENT)
+	1) DB connection configuration
+	choose DB - "use training"
+	2) prepare query - ( prepared statement with ? )
+		select * from users where userid=?
+	3) set input to query (Dynamic binding)
+		select * from users where userid='jane';
+	4) execute query
+		click lightning symbol
+		insert = executeUpdate... output is int
+		update = executeUpdate... output is int
+		delete = executeUpdate... output is int
+		select = executeQuery.... output is ResultSet
+	5) read results
+		read results using ResultSet object
+		
+Database software : internet/network based software located
+	by IP and Port
+	
+JDBC Client 
+	1) Mysql workbench
+	2) JDBC api
+
+Steps to interact with database server software
+	1) establish Connection :
+		IP
+		Port
+		Userid
+		Password
+		Database schema
+	2) run queries
+	
+drivers : software allows you device(laptop)  to communicate with new device/product
+	(printers , mouse,keyboard)
+	
+OLTP : OnLine Transaction Processing
+	ALL or NOTHING (ATOMIC)
+// establish connection object
 
 
 
+auto commit/save disabled
+	insert email id
+	insert phone
+	insert userid pwd
+	conn.savePoint(); // mini milestone
+	insert product 
+	update inventory  // error
+commit/save all change permanaently // major milestone
+
+1) connect to database - Connection.java
+2) query statement - PreparedStatement.java
+	prepare query
+	prepare input
+	execute query
+3) read the result - ResultSet.java
+
+Executing DML queries
+	select = output is resultset(group of records 0 or more)
+	insert = output is int
+	update = output is int
+	delete = output is int
+	
+
+Connection conn;
+try{
+	conn.setAutoCommit(false); 
+		DB actions
+	conn.commit(); // permanently save all above temp DB change
+}catch(Exception e){
+	conn.rollback(); // all temp succesfull changes will be reverted/rollback
+}
+finally{
+	conn.close();
+}
+
+
+HOW to execute query on Database software
+	(CreateStatement) : Static query - select * from customer where userid='john'
+	(PrepareStatement) : Dynamic query - select * from customer where userid=?
+	(PrepareCall) Stored procedure - SQL programming method ( PL SQL programmers )
+	
+	
+
+
+
+
+
+********************* struts framework ****************************************
+
+Strut : MVC architecture
+
+
+MVC architecture
+	Model = business algoritm, busienss data
+	View = webpage tech
+	Controller = controls url, process input/request, process output/response
+	
+loosely-coupled/De-coupled architecture
+
+tightly-coupled architecture
+
+
+Servlet responsibilities :
+	1) URL mapping : @Webservlet
+	2) Request processing : request.getParameter
+	3) business logic handling 
+	4) Response generation : 
+		webpage
+			redirect "res.sendRedirect", 
+			forward "req dispatcher fwd",
+		text "res.getWriter", 
+		binary "res.getoutputstream"
+
+
+Servlet Framework : 
+	Model - business logic	  (JAVA)
+	View - webpage		  (HTML)
+	Controller - Control http url,request,response (JAVA)
+
+Strut Framework : ENFORCES MVC architecture
+	Model - business logic	  (JAVA)
+	View - webpage		  (HTML)
+	Controller - Control http url (XML)
+
+Spring MVC Framework : ENFORCES MVC architecture
+	Model - business logic	  (JAVA - @Service)
+	View - webpage		  (HTML)
+	Controller - Control http url (JAVA - @Controller)
+
+Strut action
+	business logic method
+	form bean
+	
+	
+bean - pojo (Plain Old Java Object)
+	variables and get/set methods
+	
+	
+form bean
+	variable ( representing form element of view program)
+	get/set methods
+	
+Struts configuration
+	1) add strut dependancy in pom.xml
+	2) configure strut prepare and execute filter in the main application java
+	3) src/main/resources = create file called struts.xml
+	
+struts xml should have fully qualified class name 
+
+fully qualified class name = package name.class name
+class name = class name
+
+Struts framework
+	struts.xml - Controller
+	action java programs - model program
+	
+setup struts in the project
+	1) pom.xml - include all struts dependancy
+	2) include struts.xml in src/main/resources
+	3) include struts filter configuration method in the 
+		main program ( java file ending with name Application)
+
+View		    > controller  > Model
+teststrut.html > struts.xml > action program
+
+Servlet to strut upgrade:
+	1) URL mapping : in struts.xml create action element
+		map url to a class and method
+		<action name="test1"  class="com.strut.ProfileAction" method="testing2">
+		http://localhost/test1 - send request to ProfileAction program and testing2 method
+	2) Request processing
+		if html has textbox named abc
+		in action program create String variable abc... get/set methods
+	3) business logic handling 
+		written inside chosen action program method
+	4) Response generation
+		based upon action method string resopnse... configure appropriate response
+		in struts.xml
+		
+Struts.xml
+	URL mapping : http url is linked to Struts program and its method
+	Response : based upon string response from strut program method, u can
+		return redirect html or forward html or text or json etc
+		
+Strut Action progam
+	Form Bean - bean is program global variable and correspinding get/set methods.
+		Request input gathering : HTML page customers input is gathered in this programs
+		form bean section.
+	Action method
+		Business logic written here.
+		
+java bean program = simple java program with variables and get/set method for those
+				variable
+		
+View		    > controller  > Model (confidential/propritray)
+teststrut.html > struts.xml > action program
+
+teststrut.html > struts.xml > strut interceptor X action program
+	interceptor - logging, security, performance
+	
+	Jsp - Java server pages
+		HTML + Java
+		
+	Html - static webpage
+	JSP - dynamic webpage
+
+***************** strut tag library *************
+ 
+ JSP
+	HTML : input elements ( text box, menu,radio , checkbox, submit)
+	JAVA : logic - java control flow - declare variable, for loop, if loop, 
+		   Data containing component : java variblae
+	
+Strut tag library
+	UI tags : substitue html elements
+	control tags - substitute java control flows
+	data tags - substitute java variable
+	
+	
+	// read collection appendedLists in struts tag libbrary
+	<s:iterator value="%{#appendedLists}">  
+	  <li>
+		  <s:property />    
+	  </li>
+	</s:iterator>
+	
+	// read collection appendedLists in jsp , java code
+	<%
+	Iterator appendedLists=mango  apple bana tomo potato onino
+	while(appendedLists.hasNext()){
+		String s= appendedLists.next();
+		%>
+		 <li>
+		  	<%= s %>
+		 </li>
+		<%
+	}
+	%>
+		
+	
+	<s:iterator value="%{#appendedLists}">  
+	  <li>
+		  <s:property />    
+	  </li>
+	</s:iterator>
+
+***************************** SPRING **************************
+
+Spring boot
+	Project setup environment
+		setup folder structure for web project
+		including depedancy jar from third party project - Maven
+		build - archive your project into a single executable file
+		embeded webserver software included
+Spring framework
+	software architectural design
+	
+	
+IOC : inversion of control is concept 
+	that is implemented with Dependancy injection
+	outsource the creation of depended component to spring framework
+AOP : Aspect Oriented Programming
+	Separte Cross cutting concerns code from real business logic code
+
+IOC	
+		is-a(inheritance) and has-a(composition)
+		Car has-A Wheel
+		Car has-a "dependancy" on Wheel
+		dependancy - reference to global variable in a program
+
+		dependenacy injection : initializing global variable
+			the programmer doesnt have to initialize global variable.
+			this task is outsourced to spring framework.
+
+			constructing objects
+			1) accuracy with constructor inputs
+			2) not easy to initialize interface or abstract classes
+			3) managing life cycle of dependancy are tricky
+
+
+		class AmazonCustomer{
+			
+			boolean loggedInStatus
+			List shoppingCart - Info is relevant until they checkout/logout
+			String customerName - Once when u login
+			EcommerceCompanyName - Info single copy shared by all amzn custoers
+			seller
+			clickedItem
+			
+		}
+
+
+1) configure spring dependancy in pom.xml
+2) in main program include springbootapplication and component scan annotation
+	Note package names of any class that has below @
+	mention these package names in component scan
+		
+Spring annotation : below annotation mark program as Spring Program
+1) package name of below programs should be mentioned in the ComponentScan
+2) while using one of the spring programs NEVER create object yourself... instead use @Autowired
+	@configuration : object creation , configured bean, load external config files
+	@component
+		@controller =  java program are LINKED to a http url
+			@RestController
+				Associate HTTP url to a program
+				converting json String to java object
+				extracting all the input from http url
+				construtcing http response to the customerfrom your java object
+				
+		@service
+			Session management
+			request management
+			singleton 
+		@repository
+			Database connection
+			creating queries
+			setting dynamic binding
+			reading results from your query
+
+
+Dependency Injection (IOC) : Responsible for creating and managing life cycle of dependancies
+	layman terms
+		dependancy : A system is dependant on other component.
+			Car is depended on Wheel.
+		dependancy injection : how the dependancy (wheel) are created i outsourced to the wheel
+			manufacturing company.
+
+	technical terms
+		dependancy : global variable in a program
+			Engine v8;
+		dependancy injection : creating/initializing object (global variables)
+			=new  Engine();
+		
+	@autowired = dependancy injection required for below object creation challenges
+		responsbiliity of initializing the global variables is upto Spring framework
+		1) Engine is very complex system... how u create is not simple ( complex constructor input ******)	
+		2) interface/abstract programs not easy to initialize.. need to find out concrete implementing programs
+		3) managing life cycle of objects can be difficult
+
+	Scope - life cycle of dependancy object
+		Singelton : 1 object of this program is created.. this will be shared by entire
+				company customer
+		Session : 1 Object per customer login session
+		Request : 1 Object per customer request
+		prototype : 1 Object per call
+
+@ComponentScan( "com.nissan.car");
+public class MainApplication{
+	
+}
+
+
+public class Car{
+	@Autowired // dependancy injection
+	Engine e; // dependenacy injection works only on spring annotated program
+	@Autowired
+	Wheel w;
+}
+
+package com.nissan.car;
+@Service // spring annotation
+public class Engine{
+	
+	
+}
+
+public class Wheel{
+	
+	
+}
+
+
+
+Aspect Oriented Programming
+	CROSS CUTTING CONCERNS : additional lines of code 
+	that does not directly contribute to the purpose of the program
+	however it is still needed for successfull website/software launch
+	
+CROSS CUTTING CONCERNS : additional lines of code 
+	that does not directly contribute to the purpose of the program
+	however it is still needed for successfull website/software launch
+
+
+public class website{
+	public boolean login(){
+		// logging
+		sysout(" john is trying to login with empty password");
+		// security
+		if( userid== john) return false;
+		// performance
+		long start=System.currentTimeinMilliSec();
+		try{
+			// code for login - compare login userid/pwd and reg userid/pwd
+		}catch(Exception e){} // prepare when error occurs	
+		long stop=System.currentTimeinMilliSec();	
+		long totalTime=stop-start;
+			
+	}
+	public boolean register(){
+		// logging
+		sysout(" john is trying to register with empty password");
+		// security
+		if( userid== john) return false;
+		// performance
+		long start=System.currentTimeinMilliSec();
+		try{
+		
+			// code for register
+			
+		}catch(Exception e){} // prepare when error occurs	
+		long stop=System.currentTimeinMilliSec();	
+		long totalTime=stop-start;
+			
+	}
+	public void transferMoney(){
+		// logging
+		sysout(" john is trying to register with empty password");
+		// security
+		if( userid== john) return false;
+		// performance
+		long start=System.currentTimeinMilliSec();
+		try{
+		
+				// code for transfer
+			}catch(Exception e){} // prepare when error occurs	
+		long stop=System.currentTimeinMilliSec();	
+		long totalTime=stop-start;
+		
+	}
+	public void withdrawMoney(){
+		// logging
+		sysout(" john is trying to register with empty password");
+		// security
+		if( userid== john) return false;
+		// performance
+		long start=System.currentTimeinMilliSec();
+		try{
+		
+				// code for withdraw
+			}catch(Exception e){} // prepare when error occurs	
+		long stop=System.currentTimeinMilliSec();	
+		long totalTime=stop-start;
+		
+	}
+}
+	package com.training.business;
+public class website{
+	public boolean login(String userid,String pwd){
+		// code for login - compare login userid/pwd and reg userid/pwd
+	}
+	public boolean register(String userid,String pwd,String email){
+		// code for register
+	}
+	public int transferMoney(int bankAcct, int amount){
+		// code for transfer
+	}
+	public int withdrawMoney(int amount){
+		// code for withdraw
+}
+package com.training.business;
+public class loan{
+	public boolean applyLoan(String userid,String pwd){
+		// code for login - compare login userid/pwd and reg userid/pwd
+	}
+	public boolean payLoan(String userid,String pwd,String email){
+		// code for register
+	}
+}
+
+@Aspect
+public class websiteAspects{
+	execution ( * com.training.business.Login.*(String,String) )
+	within (com.training.business.Login.*)
+	within (com..*)
+	bean(*Business) 
+	public void commonCode(){
+		// logging
+		sysout(" john is trying to login with empty password");
+		// security
+		if( userid== john) return false;
+		// performance
+		long start=System.currentTimeinMilliSec();
+		try{
+			PASS CONTROL TO SERVICE LAYER
+		}catch(Exception e){} // prepare when error occurs	
+		long stop=System.currentTimeinMilliSec();	
+		long totalTime=stop-start;
+			
+	}
+
+	
+	
+	
+	public class ProgramA{
+		public void methodA(){
+			Sysout(inside programA);
+			ProgramB pb=new ProgramB();
+			int result=pb.methodB(); // JOINPOINT
+		}
+	}
+	public class ProgramB{
+		public int methodB(){
+			Sysout(inside programB);
+			return 1;
+		}
+	}
+	public class MyAspect{
+		@Around( within( com..*)	 )
+		public void extraCode(proceedingjoinpoint jp){
+			Sysout("entering aspect");
+				jp.proceed();
+			Sysout("exiting aspect");
+		}
+	}
+	Output : 
+	inside programA >>>> entering aspect >>>>> insdie programB >>>> exiting aspect
+	
+	
+	
+	Before
+	After
+	AfterReturning
+	AfterThrowing
+	Around
+************ spring data ***********
+
+setup
+1) Main program XXXXXApplication.java include entityscan and enablejparepository
+2) application.properties file include database settings
+3) pom.xml include spring data dependency
+	spring-boot-starter-data-jpa and mysql
+	
+Create your 
+	Entity  : for your database table mapping
+	Repository : CRUD operation on above entity/table 
+	
+repository > crud repository > paging and sorting repo 
+					    querybyexample repo
+							>  jpa repo	
+							
+							
+	table Profile
+		Userid, (columns)
+		password (columns)
+	
+	java ProfileEntity
+		String uid; (variables)
+		String pwd; (variables)
+		
+	JPQL : Java Persistent Query Language (written with reference to Java entity program)
+		select * from ProfileEntity where uid='john' and pwd='john1!';
+	
+	SQL : Structured Query Language (written with reference to Database table and columns)
+		select * from Profile where userid='john' and password='john1!';
+	
